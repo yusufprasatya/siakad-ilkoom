@@ -15,6 +15,11 @@ class CreateMatakuliahsTable extends Migration
     {
         Schema::create('matakuliahs', function (Blueprint $table) {
             $table->id();
+            $table->char('kode', 5)->unique();
+            $table->string('nama');
+            $table->integer('jumlah_sks');
+            $table->foreignId('dosen_id')->constrained()->onDelete('cascade');
+            $table->foreignId('jurusan_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

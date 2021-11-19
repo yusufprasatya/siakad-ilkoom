@@ -15,6 +15,8 @@ class CreateMahasiswaMatakuliahTable extends Migration
     {
         Schema::create('mahasiswa_matakuliah', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('mahasiswa_id')->constrained()->onDelete('cascade');
+            $table->foreignId('matakuliah_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

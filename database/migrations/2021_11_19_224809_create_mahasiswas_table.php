@@ -15,6 +15,9 @@ class CreateMahasiswasTable extends Migration
     {
         Schema::create('mahasiswas', function (Blueprint $table) {
             $table->id();
+            $table->char('nim', 8)->unique();
+            $table->string('nama');
+            $table->foreignId('jurusan_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

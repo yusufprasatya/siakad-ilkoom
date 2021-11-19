@@ -15,6 +15,9 @@ class CreateDosensTable extends Migration
     {
         Schema::create('dosens', function (Blueprint $table) {
             $table->id();
+            $table->char('nid', 8)->unique();
+            $table->string('nama');
+            $table->foreignId('jurusan_id')->constrained()->onDelete('cascade');    
             $table->timestamps();
         });
     }
