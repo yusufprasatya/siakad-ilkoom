@@ -13,6 +13,7 @@ class MahasiswaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Mahasiswa::factory()->count(50)->create();
+        
     }
 }

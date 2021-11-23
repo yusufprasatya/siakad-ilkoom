@@ -14,5 +14,6 @@ class MatakuliahSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\Matakuliah::factory()->count(50)->create();
     }
 }

@@ -14,5 +14,6 @@ class MahasiswaMatakuliahSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\MahasiswaMatakuliah::factory()->count(200)->create();
     }
 }

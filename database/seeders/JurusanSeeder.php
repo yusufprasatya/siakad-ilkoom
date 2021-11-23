@@ -14,5 +14,6 @@ class JurusanSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\Jurusan::factory()->count(3)->create();
     }
 }
