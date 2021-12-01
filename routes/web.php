@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\JurusanController;
+use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MatakuliahController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +19,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('jurusans', JurusanController::class);
+Route::resource('dosens', DosenController::class);
+Route::resource('mahasiswas', MahasiswaController::class);
+Route::resource('matakuliahs', MatakuliahController::class);
 
 Auth::routes();
 
