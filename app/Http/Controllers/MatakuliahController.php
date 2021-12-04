@@ -16,6 +16,8 @@ class MatakuliahController extends Controller
     public function index()
     {
         //
+        $matakuliahs = Matakuliah::with('dosen', 'jurusan')->orderBy('nama')->paginate(10);
+        return view('matakuliah.index', ['matakuliahs' => $matakuliahs]);
     }
 
     /**
