@@ -16,6 +16,8 @@ class MahasiswaController extends Controller
     public function index()
     {
         //
+        $mahasiswas = Mahasiswa::with('jurusan')->orderBy('nama')->paginate(10);
+        return view('mahasiswa.index', ['mahasiswas' => $mahasiswas]);
     }
 
     /**
