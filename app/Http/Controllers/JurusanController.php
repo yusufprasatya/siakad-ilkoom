@@ -16,6 +16,8 @@ class JurusanController extends Controller
     public function index()
     {
         //
+        $jurusans = Jurusan::withCount('mahasiswas')->orderBy('nama')->get();
+        return view('jurusan.index', ['jurusans' => $jurusans]);
     }
 
     /**
